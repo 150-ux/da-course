@@ -60,8 +60,9 @@ const Home = () => {
   const categories = [
     { name: '编程基础', icon: <Code className="h-6 w-6" />, color: 'bg-blue-500' },
     { name: '数据分析', icon: <BarChart3 className="h-6 w-6" />, color: 'bg-green-500' },
-    { name: '商务分析', icon: <BookOpen className="h-6 w-6" />, color: 'bg-purple-500' },
-    { name: '数据可视化', icon: <Award className="h-6 w-6" />, color: 'bg-yellow-500' }
+    { name: '数据分析与应用', icon: <BookOpen className="h-6 w-6" />, color: 'bg-purple-500' },
+    { name: '商务分析', icon: <Award className="h-6 w-6" />, color: 'bg-yellow-500' },
+    { name: '数据可视化', icon: <BarChart3 className="h-6 w-6" />, color: 'bg-orange-500' }
   ];
 
   // 计算学习进度
