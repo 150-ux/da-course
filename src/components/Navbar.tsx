@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Home, BookOpen, Award, UserCircle } from 'lucide-react';
+import { Menu, X, User, LogOut, Home, BookOpen, Award, UserCircle, Code } from 'lucide-react';
 import { useUserStore } from '../store';
 
 const Navbar = () => {
@@ -31,6 +31,10 @@ const Navbar = () => {
             <Link to="/courses" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
               <BookOpen className="h-5 w-5" />
               <span>课程中心</span>
+            </Link>
+            <Link to="/syllabus" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+              <Code className="h-5 w-5" />
+              <span>学习大纲</span>
             </Link>
             {user && (
               <>
@@ -81,8 +85,11 @@ const Navbar = () => {
               首页
             </Link>
             <Link to="/courses" className="block py-2 hover:text-orange-400 transition-colors">
-              课程中心
-            </Link>
+                  课程中心
+                </Link>
+                <Link to="/syllabus" className="block py-2 hover:text-orange-400 transition-colors">
+                  学习大纲
+                </Link>
             {user && (
               <>
                 <Link to="/achievements" className="block py-2 hover:text-orange-400 transition-colors">

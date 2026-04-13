@@ -8,6 +8,7 @@ import Achievements from './pages/Achievements';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Syllabus from './pages/Syllabus';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/syllabus" element={<Syllabus />} />
           </Routes>
         </main>
         <footer className="bg-blue-900 text-white py-8">
@@ -39,6 +41,7 @@ function App() {
                   <ul className="space-y-2">
                     <li><a href="/" className="text-blue-200 hover:text-white transition-colors">首页</a></li>
                     <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">课程中心</a></li>
+                    <li><a href="/syllabus" className="text-blue-200 hover:text-white transition-colors">学习大纲</a></li>
                     <li><a href="/achievements" className="text-blue-200 hover:text-white transition-colors">成就系统</a></li>
                     <li><a href="/profile" className="text-blue-200 hover:text-white transition-colors">个人中心</a></li>
                   </ul>
