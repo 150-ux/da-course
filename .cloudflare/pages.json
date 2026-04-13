@@ -1,0 +1,9 @@
+{
+  "build": {
+    "command": "npm run build",
+    "directory": "dist"
+  },
+  "framework": {
+    "name": "vite"
+  }
+}
