@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Syllabus from './pages/Syllabus';
+import Document from './pages/Document';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/syllabus" element={<Syllabus />} />
+            <Route path="/document" element={<Document />} />
           </Routes>
         </main>
         <footer className="bg-blue-900 text-white py-8">
