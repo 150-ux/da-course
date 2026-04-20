@@ -123,10 +123,11 @@ const Learn = () => {
   };
 
   const handleMarkComplete = async () => {
+    // 不需要登录也可以标记为完成
     if (user) {
       await updateProgress(currentLesson.id, true);
-      setCompleted(true);
     }
+    setCompleted(true);
   };
 
   const handleNextLesson = () => {

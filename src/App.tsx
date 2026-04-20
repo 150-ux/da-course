@@ -10,6 +10,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Syllabus from './pages/Syllabus';
 import Document from './pages/Document';
+import Practice from './pages/Practice';
+import Exams from './pages/Exams';
+import Training from './pages/Training';
 
 function App() {
   return (
@@ -28,6 +31,12 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/document" element={<Document />} />
+            <Route path="/practice" element={<Practice />} />
+            <Route path="/practice/:id" element={<Practice />} />
+            <Route path="/exams" element={<Exams />} />
+            <Route path="/exam/:id" element={<Exams />} />
+            <Route path="/training" element={<Training />} />
+            <Route path="/training/:id" element={<Training />} />
           </Routes>
         </main>
         <footer className="bg-blue-900 text-white py-8">

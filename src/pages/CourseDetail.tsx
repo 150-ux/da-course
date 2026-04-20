@@ -91,18 +91,12 @@ const CourseDetail = () => {
   const course = currentCourse || mockCourse;
 
   const handleEnroll = () => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
+    // 不需要登录也可以报名
     setEnrolled(true);
   };
 
   const handleStartLearning = (chapterId: string, lessonId: string) => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
+    // 不需要登录也可以学习
     navigate(`/learn/${course.id}/${chapterId}?lessonId=${lessonId}`);
   };
 

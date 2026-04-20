@@ -131,21 +131,8 @@ const Achievements = () => {
 
   const userAchievements = achievements.length > 0 ? achievements : mockAchievements;
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <h1 className="text-2xl font-bold mb-4">请先登录</h1>
-            <p className="text-gray-600 mb-6">登录后查看您的成就和学习进度</p>
-            <Link to="/login" className="px-6 py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors">
-              登录
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // 不需要登录也可以访问成就系统
+  // 使用模拟数据展示
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Home, BookOpen, Award, UserCircle, Code, FileText } from 'lucide-react';
+import { Menu, X, User, LogOut, Home, BookOpen, Award, UserCircle, Code, FileText, PlayCircle, FileCheck, Zap } from 'lucide-react';
 import { useUserStore } from '../store';
 
 const Navbar = () => {
@@ -39,6 +39,18 @@ const Navbar = () => {
             <Link to="/document" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
               <FileText className="h-5 w-5" />
               <span>项目文档</span>
+            </Link>
+            <Link to="/practice" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+              <PlayCircle className="h-5 w-5" />
+              <span>练习项目</span>
+            </Link>
+            <Link to="/exams" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+              <FileCheck className="h-5 w-5" />
+              <span>考试测评</span>
+            </Link>
+            <Link to="/training" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+              <Zap className="h-5 w-5" />
+              <span>训练项目</span>
             </Link>
             {user && (
               <>
@@ -96,6 +108,15 @@ const Navbar = () => {
                 </Link>
                 <Link to="/document" className="block py-2 hover:text-orange-400 transition-colors">
                   项目文档
+                </Link>
+                <Link to="/practice" className="block py-2 hover:text-orange-400 transition-colors">
+                  练习项目
+                </Link>
+                <Link to="/exams" className="block py-2 hover:text-orange-400 transition-colors">
+                  考试测评
+                </Link>
+                <Link to="/training" className="block py-2 hover:text-orange-400 transition-colors">
+                  训练项目
                 </Link>
             {user && (
               <>

@@ -54,21 +54,9 @@ const Profile = () => {
     }
   ];
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <h1 className="text-2xl font-bold mb-4">请先登录</h1>
-            <p className="text-gray-600 mb-6">登录后查看您的个人信息</p>
-            <Link to="/login" className="px-6 py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors">
-              登录
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // 不需要登录也可以访问个人中心
+  // 使用模拟数据展示
+  const isLoggedIn = !!user;
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -83,8 +71,8 @@ const Profile = () => {
                 <div className="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                   <User className="h-12 w-12 text-blue-900" />
                 </div>
-                <h2 className="text-xl font-semibold">{user.user_metadata?.name || '用户'}</h2>
-                <p className="text-gray-600">{user.email}</p>
+                <h2 className="text-xl font-semibold">{user?.user_metadata?.name || '访客用户'}</h2>
+                <p className="text-gray-600">{user?.email || 'guest@example.com'}</p>
               </div>
               <div className="space-y-2">
                 <Link to="/profile" className="flex items-center p-3 rounded-md bg-blue-50 text-blue-900">
@@ -165,19 +153,19 @@ const Profile = () => {
                 <div className="space-y-4">
                   <div className="flex">
                     <div className="w-1/3 font-medium">姓名</div>
-                    <div className="w-2/3">{user.user_metadata?.name || '未设置'}</div>
+                    <div className="w-2/3">{user?.user_metadata?.name || '未设置'}</div>
                   </div>
                   <div className="flex">
                     <div className="w-1/3 font-medium">邮箱</div>
-                    <div className="w-2/3">{user.email}</div>
+                    <div className="w-2/3">{user?.email || '未设置'}</div>
                   </div>
                   <div className="flex">
                     <div className="w-1/3 font-medium">注册时间</div>
-                    <div className="w-2/3">{new Date(user.created_at).toLocaleDateString()}</div>
+                    <div className="w-2/3">{user?.created_at ? new Date(user.created_at).toLocaleDateString() : '未设置'}</div>
                   </div>
                   <div className="flex">
                     <div className="w-1/3 font-medium">用户类型</div>
-                    <div className="w-2/3">免费用户</div>
+                    <div className="w-2/3">{user ? '免费用户' : '访客'}</div>
                   </div>
                 </div>
               )}
