@@ -3,50 +3,116 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Code, Clock, Award, CheckCircle, ChevronRight } from 'lucide-react';
 
 const Training = () => {
-  // 模拟训练数据
+  // 10个训练项目数据
   const trainings = [
     {
       id: '1',
-      title: 'Python编程训练营',
-      description: '为期一周的Python编程密集训练',
+      title: 'Python编程基础训练',
+      description: '为期7天的Python编程密集训练，从基础语法到函数编程',
       difficulty: '初级',
-      duration: '5天',
+      duration: '7天',
       hours_per_day: 2,
       category: '编程基础',
-      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20programming%20bootcamp%20icon&image_size=square',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20programming%20basic%20training%20icon&image_size=square',
       progress: 0
     },
     {
       id: '2',
-      title: '数据分析实战训练',
-      description: '使用真实数据集进行数据分析训练',
+      title: '数据分析实战项目',
+      description: '使用真实数据集进行数据分析，包括数据清洗、转换和可视化',
       difficulty: '中级',
-      duration: '7天',
+      duration: '10天',
       hours_per_day: 3,
       category: '数据分析',
-      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Data%20analysis%20bootcamp%20icon&image_size=square',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Data%20analysis%20project%20icon&image_size=square',
       progress: 0
     },
     {
       id: '3',
-      title: '商务智能训练',
-      description: '学习商务数据分析和可视化技能',
+      title: '商务智能分析训练',
+      description: '学习商务数据分析和可视化技能，掌握商业决策支持工具',
       difficulty: '中级',
-      duration: '10天',
+      duration: '12天',
       hours_per_day: 2.5,
       category: '商务分析',
-      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Business%20intelligence%20training%20icon&image_size=square',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Business%20intelligence%20analysis%20icon&image_size=square',
       progress: 0
     },
     {
       id: '4',
-      title: '机器学习项目训练',
-      description: '从数据到模型的完整机器学习项目训练',
+      title: '机器学习入门项目',
+      description: '从数据到模型的完整机器学习项目训练，包括分类和回归任务',
       difficulty: '高级',
       duration: '14天',
       hours_per_day: 4,
       category: '机器学习',
-      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Machine%20learning%20training%20icon&image_size=square',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Machine%20learning%20beginner%20project%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '5',
+      title: '数据可视化高级训练',
+      description: '掌握Matplotlib、Seaborn等库，创建专业的数据可视化图表',
+      difficulty: '中级',
+      duration: '8天',
+      hours_per_day: 3,
+      category: '数据可视化',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Data%20visualization%20advanced%20training%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '6',
+      title: 'Python自动化办公项目',
+      description: '使用Python自动化处理Excel、Word等办公文档，提高工作效率',
+      difficulty: '中级',
+      duration: '9天',
+      hours_per_day: 2.5,
+      category: '编程基础',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20automation%20office%20project%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '7',
+      title: '时间序列分析训练',
+      description: '学习时间序列数据的分析方法，预测未来趋势',
+      difficulty: '高级',
+      duration: '10天',
+      hours_per_day: 3.5,
+      category: '数据分析',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Time%20series%20analysis%20training%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '8',
+      title: '自然语言处理项目',
+      description: '使用Python进行文本分析、情感分析等自然语言处理任务',
+      difficulty: '高级',
+      duration: '12天',
+      hours_per_day: 4,
+      category: '机器学习',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Natural%20language%20processing%20project%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '9',
+      title: '数据挖掘实战训练',
+      description: '学习数据挖掘技术，从海量数据中发现有价值的信息',
+      difficulty: '高级',
+      duration: '14天',
+      hours_per_day: 3.5,
+      category: '数据分析',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Data%20mining%20practical%20training%20icon&image_size=square',
+      progress: 0
+    },
+    {
+      id: '10',
+      title: '综合数据分析项目',
+      description: '整合所学技能，完成一个完整的数据分析项目，包括从数据获取到报告生成',
+      difficulty: '高级',
+      duration: '15天',
+      hours_per_day: 4,
+      category: '综合',
+      icon: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Comprehensive%20data%20analysis%20project%20icon&image_size=square',
       progress: 0
     }
   ];
@@ -80,6 +146,8 @@ const Training = () => {
                 <option value="数据分析">数据分析</option>
                 <option value="商务分析">商务分析</option>
                 <option value="机器学习">机器学习</option>
+                <option value="数据可视化">数据可视化</option>
+                <option value="综合">综合</option>
               </select>
             </div>
             <div>
